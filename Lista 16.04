@@ -1,0 +1,46 @@
+==== Exercicio 1:
+--Programa 1
+public class Produto {
+	private String nome;
+	private double preco;
+public Produto(String nome, double preco) {
+		this.nome = nome;
+		this.preco = preco;
+		
+		System.out.println("Product's name: "+this.nome); //Nome do produto
+		System.out.println("Price of the product: "+this.preco); //Preço do produto
+	}
+public Produto(String nome) {
+	this.nome = nome;
+	System.out.println("Product's name: "+this.nome); //Nome do produto
+}
+}
+--Programa 2
+import java.util.Scanner;
+
+public class Main {
+	public static void main (Scanner [] src) {
+		Scanner scanner = new Scanner (System.in);
+		
+		System.out.println("Want to create a product with price? "); //Deseja criar um produto com preço
+		String escolha = scanner.nextLine();
+		
+		if (escolha.equalsIgnoreCase("s")) {
+			System.out.println("Product's name: "); //Nome do produto
+			String nome = scanner.nextLine();
+			
+			System.out.println("Enter the price of the product: "); //Digite o preço do produto
+			double preco = scanner.nextDouble();
+		}
+		else if (escolha.equalsIgnoreCase("n")) {
+			System.out.println("Product's name: "); //Nome do produto
+			String nome = scanner.nextLine();
+			Produto produto = new Produto (nome);
+		}
+		else {
+			System.out.println("ERROR!");
+		}
+	}
+}
+
+==== Exercicio 2:
