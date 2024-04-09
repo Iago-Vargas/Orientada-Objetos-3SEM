@@ -1,1 +1,179 @@
 ====== Aula 09.04.2024 -- Orientada Objeto ======
+
+====Exemplo 1 de uso do try
+package aula;
+
+public class aula {
+	public static void main (String[] args) {
+		try { //Try é aonde o suspeito codigo cabivel de erro fica
+			int [] numeros = {1,2,3}; //Uma array sempre começa no 0, ali esta pedindo 3!! mas so tem 2
+			System.out.println(numeros[3]);
+		}catch(ArrayIndexOutOfBoundsException e) { //Inves de interromper o codigo ele segue o codigo
+			
+			System.out.println("Erro Indice fora do array" +e.getMessage());
+		}
+	}
+}
+
+====Exemplo 2 de uso do try
+package aula;
+
+public class exemplo2 {
+	public static void main(String[] args) {
+		int a = 10;
+		int b = 0; 
+		try {
+			System.out.println(a/b); //You cannot divide by 0 then it would give an error
+		} catch (ArithmeticException e) {
+			System.out.println("Error: "+e.getMessage());
+		}
+	}
+}
+
+====Exemplo 3 de uso do try
+package aula;
+
+public class exemplo3 {
+	public static void main (String[] args) {
+		String numero = "abc";
+		
+		int valor = Integer.parseInt(numero);
+	}
+}
+====Exercicio 1 Uso de Try
+
+package aula;
+import java.util.InputMismatchException;
+import java.util.Scanner;
+//Escreva um programa que solicita ao usuário para digitar um número inteiro e exiba a raiz quadrada desse número. Certifique-se de que o programa trate adequadamente as exceções se o usuário digitar um valor inválido, por exemplo, ler um char ou string.
+
+public class Exercicio1Aula {
+	 public static void main(String[] args) {
+	        Scanner scanner = new Scanner(System.in);
+	        int numero = 0;
+
+	        // Loop para garantir que o usuário digite um número inteiro válido
+	        while (true) {
+	            try {
+	                System.out.print("Digite um número inteiro: ");
+	                numero = scanner.nextInt();
+	                break; // Sai do loop se o número for válido
+	            } catch (InputMismatchException e) {
+	                System.out.println("Por favor, digite um número inteiro válido.");
+	                scanner.next(); // Limpa o buffer do scanner
+	            }
+	        }
+
+	        // Calcula a raiz quadrada e exibe o resultado
+	        double raizQuadrada = Math.sqrt(numero);
+	        System.out.println("A raiz quadrada de " + numero + " é: " + raizQuadrada);
+
+	        // Fecha o scanner
+	        scanner.close();
+	    }
+}
+
+====Exercicio 2 Uso de Try
+
+package aula;
+import java.util.Scanner;
+//Faça o tratamento de exceções em uma calculadora
+public class Exercicio2Aula {
+	public static void main (String[] args) {
+		Scanner scanner  = new Scanner (System.in);
+		
+		try {
+			System.out.println("Digite o primeiro valor a ser lido: ");
+			double numero1 = scanner.nextDouble();
+			
+			System.out.println("Digite o segundo valor a ser lido: ");
+			double numero2 = scanner.nextDouble();
+			
+			System.out.println("Qual operação desejada? (+ , - , X, /) ");
+			char operacao = scanner.next().charAt(0);
+			
+			double resultado = calcular(numero1, numero2, operacao);
+			System.out.println("Result: " +resultado);
+		} 
+		catch (ArithmeticException e) {
+			System.out.println ("Error: divide by zero"); } //Divisao por 0!
+		catch (java.util.InputMismatchException e) {
+			System.out.println ("Wrong value entered"); } //valor digitado errado
+		catch (UnsupportedOperationException e) {
+			System.out.println ("Operation not valid"); } //Operacao nao valida
+		
+		}
+	
+		public static double calcular(double numero1, double numero2, char operacao) {
+			switch (operacao) {
+			case'+':
+				return numero1 + numero2;
+			case '-':
+				return numero1 - numero2;
+			case '*':
+				return numero1 * numero2;
+			case '/':
+				if (numero2 == 0) {
+					throw new ArithmeticException("Division by zero is not possible"); //Divisao por zero nao é possivel
+				}
+				return numero1 / numero2;
+			}
+	}
+}
+====Exercicio 3 Uso de Try
+
+package aula;
+import java.util.Scanner;
+//Faça o tratamento de exceções em conversões de valores lidos pelo teclado. Por exemplo, ao ler uma string e converter ela para double.
+public class Exercicio3Aula {
+	public static void main (String[] args) {
+		Scanner scanner = new Scanner (System.in);
+		
+		try {
+			System.out.println("Enter a number: "); //Digite um numero
+			String input = scanner.nextLine();
+			
+			double numero = converterParaDouble(input);
+			
+			System.out.println("Number entered was: "+numero); //numero digitado foi
+		} catch(NumberFormatException e) {
+			System.out.println ("Wrong entry error!"); //Erro, numero de entrada errado
+		}
+	}
+	public static double converterParaDouble (String input) {
+		return Double.parseDouble(input);
+	}
+}	
+
+====Exercicio 4 Uso de Try
+
+package aula;
+import java.util.Scanner;
+//Pesquise quais são as Exceções existentes que já possuem tratamento e explique brevemente como cada uma funciona. Teste duas exceções.
+public class Exercicio4Aula {
+	public static void main (String [] args) {
+		Scanner scanner = new Scanner (System.in);
+		System.out.println("What excess would you like to meet?"); //Qual excessao gostaria de conhecer
+		System.out.println("1- Implicit: Exceptions");
+		System.out.println("2- Explict: Exceptions");
+		Integer opcao = scanner.nextInt();
+		
+		switch (opcao) {
+		case 1:
+			implicit();
+			break;
+		case 2:
+			explicit();
+			break;
+		}
+		
+	}
+	public static void implicit() {
+		System.out.println("Implicit exceptions are those that can be worked around so that it is still possible for the program to run without erros"); //Exceções implicitas são as que possuem como contornar, que ainda é possivel o programa ser executado sem erros.
+		
+	}
+	public static void explicit() {
+		System.out.println("Explicit exceptions are those that are unavoidable, it is not even possible to code the code as they are not susceptible to erros"); //Exceções explicitas são as que são incontornaveis, não é possivel nem codificar o codigo pois nao são malhaveis a erros
+		
+	}
+}
