@@ -1,4 +1,4 @@
-==== Exercicio 1:
+================================================================================================================================================================================== Exercicio 1:
 --Programa 1
 public class Produto {
 	private String nome;
@@ -43,4 +43,271 @@ public class Main {
 	}
 }
 
-==== Exercicio 2:
+==================================================================================================================================================================================Exercicio 2:
+--Programa 1: 
+
+//\n
+import java.util.Scanner;
+public class Main2 {
+	public static void main (String[] src) {
+		Scanner scanner = new Scanner (System.in);
+		
+		System.out.println ("I would like  to register an animal name? \n 1- Yes \n 2- Not"); //Gostaria de cadastrar um nome animal
+		int choice = scanner.nextInt();
+		scanner.nextLine();
+		
+		switch (choice) {
+			case 1:
+				System.out.println (" === Menu ===");
+				System.out.println (" I would like to register species? (y/n)"); //Gostaria de registrar a especie
+				String option = scanner.nextLine();
+				
+				if (option.equalsIgnoreCase("y")) {
+					registration();
+				}
+				else {
+					animal();
+				}
+				break;
+				
+			case 2:
+			System.exit(0);
+		}
+	}
+	
+	public static void registration () {
+		Scanner scanner = new Scanner (System.in);
+		
+		System.out.println ("Enter the animal's name: "); //Digite o nome do animal
+		String animalname = scanner.nextLine();
+		System.out.println ("Enter your species: "); //Digite o nome da especie
+		String species = scanner.nextLine();
+		
+		Animal animal = new Animal(animalname, species);
+	}
+	public static void animal () {
+		Scanner scanner = new Scanner (System.in);
+		
+		System.out.println ("Enter the animal's name: "); //Digite o nome do animal
+		String animalname = scanner.nextLine();
+		
+		Animal animal = new Animal(animalname);
+	}
+	
+}
+--Programa 2: 
+
+public class Animal {
+	private String animalname;
+	private String species;
+	public Animal (String animalname, String species) {
+		this.animalname = animalname;
+		this.species = species;
+		
+		System.out.println ("The name of the animal is:  "+this.animalname); //O nome do animal é
+		System.out.println ("Belonging to the species: "+this.species); //Pertebcente da especie
+	}
+	
+	public Animal (String animalname) {
+		this.animalname = animalname;
+		System.out.println ("The name of the animal is: "+this.animalname); //O nome do animal é
+	}
+}
+
+================================================================================================================================================================================== Exercicio 3: 
+--Programa 1: 
+
+import java.util.Scanner;
+public class Main3 {
+	public static void main (String [] src) {
+		Scanner scanner = new Scanner (System.in);
+		
+		System.out.println ("I would like to register three sides or just one? (1 - 3 )"); //Gostaria de registrar tres lados ou somente um
+		int escolha = scanner.nextInt();
+		
+		switch (escolha) {
+		case 1: 
+			side1();
+			break;
+		case 2:
+			System.exit(0);
+			
+		case 3:
+			System.out.println ("Enter the three values on each side: "); //Digite os tres valores de cada lado
+			int side1 = scanner.nextInt();
+			int side2 = scanner.nextInt();
+			int side3 = scanner.nextInt();
+			Triangulo triangulo = new Triangulo(side1, side2, side3);
+			break;	
+		}
+}
+	public static void side1 () {
+		Scanner scanner = new Scanner (System.in);
+		
+		System.out.println ("Enter the value of a side value: "); //Digite um dos lados do triangulo
+		int side1 = scanner.nextInt();
+		Triangulo triangulo = new Triangulo(side1);
+		
+	}
+}
+--Programa 2:
+
+public class Triangulo {
+	private int side1;
+	private int side2;
+	private int side3;
+	
+	public Triangulo (int side1, int side2, int side3) {
+		this.side1 = side1;
+		this.side2 = side2;
+		this.side3 = side3;
+		
+		System.out.println ("The value of the first side is: "+this.side1); //the value of the first side is
+		System.out.println ("The value of the second side is: "+this.side2); //O valor do segundo lado é
+		System.out.println ("The value of the third side is: "+this.side3); //O valor do terceiro lado é
+		
+	}
+	public Triangulo (int side1) {
+		this.side1 = side1;
+		System.out.println ("The value of the first side is: "+this.side1);//O valort do 1 lado é
+	}
+}
+
+================================================================================================================================================================================== Exercicio 4:
+--Programa 1:
+import java.util.Scanner;
+public class Main4 {
+	public static void main (String [] src) {
+		Scanner scanner = new Scanner (System.in);
+		
+		System.out.println ("===- REGISTRATION SYSTEM -==="); //Sistema de registro
+		System.out.println ("1- REGISTRATION NAME AND SALARY "); //Registro de nome e salario
+		System.out.println ("2- REGISTRATION NAME"); //Registro de nome
+		System.out.println ("3- EXIT"); 
+		int opcao = scanner.nextInt();
+		
+		switch (opcao){
+		case 1:
+			nameandsalary();
+			break;
+		case 2:
+			name();
+			break;
+		case 3:
+			System.exit(0);
+		}
+		
+	}
+	
+	public static void nameandsalary () {
+		Scanner scanner = new Scanner (System.in);
+		
+		System.out.println ("Employee: ");
+		String name = scanner.nextLine();
+		System.out.println ("Wage: ");
+		Double wage = scanner.nextDouble();
+		
+		Funcionario funcionario = new Funcionario(name, wage);
+	}
+	public static void name() {
+		Scanner scanner = new Scanner (System.in);
+		
+		System.out.println ("Employee: ");
+		String name = scanner.nextLine();
+		
+		Funcionario funcionario = new Funcionario(name);
+	}
+}
+
+--Programa 2:
+package Teste;
+
+public class Funcionario {
+	private String name;
+	private Double wage;
+	
+	public Funcionario (String name, double wage) {
+		this.name = name;
+		this.wage = wage;
+		System.out.println ("The employee's name is: "+this.name); //O nome do funcionario é
+		System.out.println ("He has a salary of: "+this.wage); //Possui um salario de
+	}
+	public Funcionario (String name) {
+		this.name = name;
+		System.out.println ("The employee's name is: "+this.name); //O nome do funcionario é
+	}
+}
+
+================================================================================================================================================================================== Exercicio 5:
+--Programa 1:
+import java.util.Scanner;
+
+public class Main5 {
+	public static void main (String [] src) {
+		Scanner scanner = new Scanner(System.in);
+		
+		System.out.println (" =====  MENU =====");
+		System.out.println (" 1- COMPUTER REGISTRATION"); //REGISTRO DE COMPUTADOR
+		System.out.println (" 2- BRAND REGISTRATION"); // REGISTRO DE MARCA
+		System.out.println (" 3- EXIT");
+		int option = scanner.nextInt();
+		
+		switch (option) {
+		case 1:
+			registration();
+			break;
+			
+		case 2:
+			brand();
+			
+			break;
+		case 3:
+			System.exit(0);
+			
+		}
+	}
+	public static void registration () {
+		Scanner scanner = new Scanner (System.in);
+		
+		System.out.println ("Enter computer brand: "); //DIGITE A MARCA DO COMPUTADOR
+		String brand = scanner.nextLine();
+		System.out.println ("Enter the model: "); //DIGITE O MODELO 
+		String model = scanner.nextLine();
+		System.out.println ("Enter the system: "); //DIGITE O SISTEMA
+		String system = scanner.nextLine();
+		
+		Pc pc = new Pc (brand,model,system);
+	}
+	public static void brand () {
+		Scanner scanner = new Scanner (System.in);
+		
+		System.out.println ("Enter computer brand: "); //DIGITE A MARCA DO COMPUTADOR
+		String brand = scanner.nextLine();
+		Pc pc = new Pc(brand);
+	}
+}
+
+--Programa 2:
+package Teste;
+
+public class Pc {
+	private String brand;
+	private String model;
+	private String system;
+	public Pc (String brand, String model, String system) {
+		this.brand = brand;
+		this.model = model;
+		this.system = system;
+		
+		System.out.println ("Computer landmark: "+this.brand); //Computador marca
+		System.out.println ("Computer model: "+this.model); //Computador modelo
+		System.out.println ("Computer system: "+this.system); //Computador sistema
+	}
+	public Pc (String brand) {
+		this.brand = brand;
+		
+		System.out.println ("Computer landmark: "+this.brand); //Computador marca
+	}
+}
+
+================================================================================================================================================================================== Exercicio 6:
