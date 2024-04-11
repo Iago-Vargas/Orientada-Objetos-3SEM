@@ -57,3 +57,196 @@ public class Ex1 {
 	}
 }
 ================================================================================ EX2:
+---Programa 1:
+package Lista;
+
+public class MainTaxi {
+	private Double fuel = 4.90;
+	private int odometerStart;
+	private int odometerEnd;
+	private int spentfuel;
+	private int totalKM;
+	private Double moneyreceived;
+	
+	public MainTaxi (int odometerStart, int odometerEnd, int spentfuel, double moneyreceived){
+		this.odometerStart = odometerStart;
+		this.odometerEnd = odometerEnd;
+		this.spentfuel = spentfuel;
+		this.moneyreceived = moneyreceived;
+		
+		System.out.println ("Initial odometer: "+this.odometerStart);
+		System.out.println ("End odometer: "+this.odometerEnd);
+		System.out.println ("Total fuel spent: "+this.spentfuel);
+		System.out.println ("Money received from customers: "+this.moneyreceived);
+	}
+	public MainTaxi(Double fuel) {
+		this.fuel = fuel = 4.90;
+		System.out.println ("Fuel Price: "+this.fuel);
+	}
+}
+
+---Programa 2:
+package Lista;
+import java.util.Scanner;
+public class Ex2 {
+	private static int odometerStart = 0;
+	private static int odometerEnd = 0;
+	private static int spentfuel = 0;
+	private static double moneyreceived = 0;
+	
+	public static void main (String [] src) {
+		Scanner scanner = new Scanner (System.in);
+		System.out.println (" === Taxi Rank ===");
+		fuel();
+		data();
+		menu();
+	}
+	public static void fuel () {
+		Scanner scanner = new Scanner (System.in);
+		Double fuel = 4.90;
+		MainTaxi maintaxi = new MainTaxi (fuel);
+	}
+	public static void data () {
+
+		Scanner scanner = new Scanner (System.in);
+		System.out.println ("Odometer start of the day: ");
+		odometerStart = scanner.nextInt();
+		System.out.println ("Odometer end of the day: ");
+		odometerEnd = scanner.nextInt();
+		System.out.println ("Spent fuel: ");
+		spentfuel = scanner.nextInt();
+		System.out.println ("Money received today: ");
+		moneyreceived = scanner.nextDouble();
+		MainTaxi maintaxi = new MainTaxi (odometerStart, odometerEnd, spentfuel, moneyreceived);
+	}
+	public static void menu () {
+		Scanner scanner = new Scanner (System.in);
+		
+		System.out.println (" === MENU === ");
+		System.out.println ("1- Average consultation in KM ");
+		System.out.println ("2- Profit of the day ");
+		System.out.println ("3- Exit ");
+		int option = scanner.nextInt();
+		
+		switch (option) {
+		case 1:
+			km();
+			break;
+		case 2:
+			profit();
+			break;
+		case 3:
+			System.exit(0);
+		}
+	}
+	public static void km() {
+	   
+	    int totalKM = odometerEnd - odometerStart;
+		System.out.println ("Today total odometer is: "+totalKM);
+	    int consultationmedium = totalKM / spentfuel;
+	    System.out.println ("Medium consultation: "+consultationmedium);
+	}
+
+	public static void profit () {
+		
+		double profitday = moneyreceived - (spentfuel * 4.90);
+		System.out.println ("Profit today: "+profitday);
+	}
+}
+================================================================================ EX3:
+
+================================================================================ EX4:
+---Programa 1:
+package Lista;
+import java.util.Scanner;
+public class Ex4 {
+	public static void main (String [] src) {
+		Scanner scanner = new Scanner (System.in);
+		
+		String student;
+		int nota1 = 0;
+		int nota2 = 0;
+		int nota3 = 0;
+		int nota4 = 0;
+		int average = 0;
+		System.out.println ("Enter the student's name: ");
+		student = scanner.nextLine();
+		System.out.println ("Enter 1 note: ");
+		nota1 = scanner.nextInt();
+		System.out.println ("Enter 2 note: ");
+		nota2 = scanner.nextInt();
+		System.out.println ("Enter 3 note: ");
+		nota3 = scanner.nextInt();
+		System.out.println ("Enter 4 note: ");
+		nota4 = scanner.nextInt();
+		average = nota1 + nota2 + nota3 + nota4 / 4;
+		
+		if (average >= 6)
+		{
+			System.out.println ("Student: "+student);
+			System.out.println ("Approved");
+		}
+		else {
+			System.out.println ("Student: "+student);
+			System.out.println ("Disapproved");
+		}
+	}
+}
+================================================================================ EX5:
+package Lista;
+import java.util.Scanner;
+public class Ex5 {
+	public static void main (String [] src) {
+		Scanner scanner = new Scanner (System.in);
+		int x;
+		int y;
+		System.out.println (" === Cartesian Plane ===");
+		System.out.println ("Enter the value of X: ");
+		x = scanner.nextInt();
+		System.out.println ("Enter the value of Y: ");
+		y = scanner.nextInt();
+		
+		if (x > 0 && y > 0) {
+			System.out.println ("First Quadrant");
+		}
+		else if (x < 0 && y > 0) {
+			System.out.println ("Second Quadrant");
+		}
+		else if (x < 0 && y < 0) {
+			System.out.println ("Third Quadrant");
+		}
+		else if (x > 0 && y < 0) {
+			System.out.println ("Four Quadrant");
+		}
+		else {
+			System.out.println (" ERROR! ");
+		}
+	}
+}
+
+================================================================================ EX6:
+package Lista;
+import java.util.Scanner;
+
+public class Ex6 {
+	public static void main (String [] src) {
+		Scanner scanner = new Scanner (System.in);
+		int cont = 0, num = 0, maior = 0, menor = Integer.MAX_VALUE;
+		for (int i = 0 ; i < 3 ; i++) {
+			cont++;
+			System.out.println ("Enter the "+cont+" number: ");
+			num = scanner.nextInt();
+			
+			if (num > maior) {
+				maior = num;
+			}
+			if (num < menor) {
+				menor = num;
+			}
+		}
+		System.out.println ("The largest number is: "+maior);
+		System.out.println ("The smallest number is: "+menor);
+	}
+}
+================================================================================ EX7:
+
