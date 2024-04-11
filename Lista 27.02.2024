@@ -248,6 +248,112 @@ public class Ex6 {
 		System.out.println ("The smallest number is: "+menor);
 	}
 }
+================================================================================ EX8:
+
+package Lista;
+import java.util.Scanner;
+
+public class Ex8 {
+	private static String name;
+	private static int age;
+	
+	public static void main (String [] src) {
+		Scanner scanner = new Scanner (System.in);
+		
+		record();
+		verification();
+	}
+	public static void record () {
+		Scanner scanner = new Scanner (System.in);
+		
+		System.out.println ("Enter your name: ");
+		name = scanner.nextLine();
+		System.out.println ("Your age: ");
+		age = scanner.nextInt();
+		
+	}
+	public static void verification () {
+		if (age <= 15) {
+			System.out.println (" "+name+" no need to vote");
+		}
+		else if (age == 16 || age == 17) {
+			System.out.println (" "+name+" optional vote");
+		}
+		else if (age >= 70) {
+			System.out.println (" "+name+" optional vote");
+		}
+		else {
+			System.out.println (" "+name+" mandatory vote");
+		}
+	}
+}
+================================================================================ EX9:
+
+package Lista;
+import java.util.Scanner;
+
+public class Ex9 {
+	public static void main (String [] src) {
+		Scanner scanner = new Scanner (System.in);
+		int option, number1, number2, total;
+		System.out.println ("Which operation would you like: ");
+		System.out.println ("1- + ");
+		System.out.println ("2- - ");
+		System.out.println ("3- / ");
+		System.out.println ("4- * ");
+		System.out.println ("5- Exit ");
+		option = scanner.nextInt();
+		
+		switch (option) {
+		case 1:
+			System.out.println ("Enter the first value: ");
+			number1 = scanner.nextInt();
+			System.out.println ("Enter the second value: ");
+			number2 = scanner.nextInt();
+			
+			total = number1 + number2;
+			
+			System.out.println ("Result: "+total);
+			break;
+		case 2:
+			System.out.println ("Enter the first value: ");
+			number1 = scanner.nextInt();
+			System.out.println ("Enter the second value: ");
+			number2 = scanner.nextInt();
+			
+			total = number1 - number2;
+			
+			System.out.println ("Result: "+total);
+
+			break;
+		case 3:
+			System.out.println ("Enter the first value: ");
+			number1 = scanner.nextInt();
+			System.out.println ("Enter the second value: ");
+			number2 = scanner.nextInt();
+			
+			total = number1 / number2;
+			
+			System.out.println ("Result: "+total);
+
+			break;
+		case 4:
+			System.out.println ("Enter the first value: ");
+			number1 = scanner.nextInt();
+			System.out.println ("Enter the second value: ");
+			number2 = scanner.nextInt();
+			
+			total = number1 * number2;
+			
+			System.out.println ("Result: "+total);
+
+			break;
+		case 5:
+			System.exit(0);
+		}	
+	}
+}
+
 ================================================================================ EX10:
 package Lista;
 import java.util.Scanner;
@@ -328,5 +434,39 @@ public class Ex10 {
 			System.exit(0);
 		}
 	}
+}
+================================================================================ EX11:
+package Lista;
+import java.util.Scanner;
+
+public class Ex11 {
+	public static void main (String [] src) {
+	Scanner scanner = new Scanner (System.in);
+	double salary = 0;
+	
+	System.out.println ("Enter your salary: ");
+	salary = scanner.nextDouble();
+	
+	if (salary <= 1.566) {
+		System.out.println ("Isento");
+	}
+	else if (salary <= 2.347) {
+		System.out.println ("7,5%");
+
+	}
+	else if (salary <= 3.130) {
+		System.out.println ("15,0%");
+
+	}
+	else if (salary <= 3.911) {
+		System.out.println ("22,5%");
+
+	}
+	else {
+		System.out.println ("27,5%");
+		
+	}
+	}
+	
 }
 
