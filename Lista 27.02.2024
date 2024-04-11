@@ -248,5 +248,85 @@ public class Ex6 {
 		System.out.println ("The smallest number is: "+menor);
 	}
 }
-================================================================================ EX7:
+================================================================================ EX10:
+package Lista;
+import java.util.Scanner;
+
+public class Ex10 {
+	private static String teamHome, teamOut;
+	private static int homeGoals = Integer.MAX_VALUE, outGoals = Integer.MAX_VALUE;
+	private static int ShomeGoal = 0, SoutGoal = 0;
+	
+	public static void main (String [] src) {
+		teams();
+		firstGame();
+		secondGame ();
+	}
+	
+	
+	public static void teams () {
+		Scanner scanner = new Scanner (System.in);
+		
+		
+		System.out.println ("Roblox world CUP ");
+		System.out.println ("Team name: ");
+		teamHome = scanner.nextLine();
+		System.out.println ("Team outside: ");
+		teamOut = scanner.nextLine();
+		
+	}
+	public static void firstGame () {
+		Scanner scanner = new Scanner (System.in);
+		
+		System.out.println (" === FIRST GAME === ");
+		System.out.println ("How many goals the team scored: ");
+		homeGoals = scanner.nextInt();
+		System.out.println ("How many goals did the visiting team score: ");
+		outGoals = scanner.nextInt();
+		
+		if(homeGoals > outGoals) {
+			System.out.println (" "+teamHome+" "+homeGoals+" X "+outGoals+" "+teamOut);
+			System.out.println ("Home team is classified");
+			System.exit(0);
+		}
+		else if (outGoals > homeGoals) {
+			System.out.println ("Visiting team is classified");
+			System.exit(0);
+		}
+		else {
+			System.out.println ("There will be a second game");
+		}
+	}
+	public static void secondGame () {
+		Scanner scanner = new Scanner (System.in);
+		int TotalH, TotalO;
+		
+		System.out.println (" === SECOND GAME ===");
+		System.out.println ("How many goals the team scored: ");
+		ShomeGoal = scanner.nextInt();
+		System.out.println ("How many goals did the visiting team score: ");
+		SoutGoal = scanner.nextInt();
+		
+		TotalH = ShomeGoal + homeGoals;
+		TotalO = SoutGoal + outGoals;
+		
+		if (TotalH > TotalO) {
+			System.out.println (" "+teamOut+" "+TotalH+" X "+TotalO+" "+teamHome);
+			System.out.println ("Home team is classified");
+			System.exit(0);
+		}
+		else if (TotalO > TotalH) {
+			System.out.println (" "+teamOut+" "+TotalH+" X "+TotalO+" "+teamHome);
+			System.out.println ("Visiting team classified");
+			System.exit(0);
+		}
+		else if (TotalO == TotalH){
+			System.out.println (" "+teamOut+" "+TotalH+" X "+TotalO+" "+teamHome);
+			System.out.println ("Draw");
+		}
+		else {
+			System.exit(0);
+		}
+	}
+}
 
