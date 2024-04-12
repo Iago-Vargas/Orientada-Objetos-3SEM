@@ -1,1 +1,133 @@
+============================================= EXERCICIO1:
+---PROGRAMA 1:
+package Aula;
+
+public class Computador {
+	private String brand;
+	private	String model;
+	private String type;
+	private Double price;
+	public Computador (String brand, String model, String type, Double price) {
+		this.brand = brand;
+		this.model = model;
+		this.type  = type;
+		this.price = price;
+		
+		System.out.println ("The brand of the PC is:  "+this.brand);
+		System.out.println ("Of model: "+this.model);
+		System.out.println ("Type: "+this.type);
+		System.out.println ("Price: "+this.price);
+		
+	}
+}
+---PROGRAMA 2: 
+package Aula;
+import java.util.Scanner;
+
+public class main2 {
+	public static void main (String[] src) {
+		Scanner scanner = new Scanner (System.in);
+	
+		System.out.println (" === Register Computer === ");
+		System.out.println ("Which brand: ");
+		String brand = scanner.nextLine();
+		System.out.println ("Enter model: ");
+		String model = scanner.nextLine();
+		System.out.println ("Type: ");
+		String type = scanner.nextLine();
+		System.out.println ("Price: ");
+		Double price = scanner.nextDouble();
+		
+		Computador computador = new Computador(brand,model,type,price);
+	}
+}
+============================================= EXERCICIO2:
+---PROGRAMA 1:
+package Aula;
+
+public class Livro {
+	private String title;
+	private String author;
+	private int releaseYear;
+	private Double price;
+	
+	public Livro (String title, String author, int releaseYear, Double price) {
+		this.title = title;
+		this.author = author;
+		this.releaseYear = releaseYear;
+		this.price = price;
+		
+		System.out.println ("Book's title: "+this.title);
+		System.out.println ("Author: "+this.author);
+		System.out.println ("Release year: "+this.releaseYear);
+		System.out.println ("Price: "+price);
+
+	}
+}
+---PROGRAMA 2:
+package Aula;
+import java.util.Scanner;
+
+public class Main4 {
+	public static void main (String [] src){
+	Scanner scanner = new Scanner (System.in);
+	
+	String title, author;
+	double price;
+	int releaseYear;
+	
+	System.out.println (" === Register Book ===");
+	System.out.println ("Book title: ");
+	title = scanner.nextLine();
+	System.out.println ("Author: ");
+	author = scanner.nextLine();
+	System.out.println ("Year: ");
+	releaseYear = scanner.nextInt();
+	System.out.println ("Price: ");
+	price = scanner.nextDouble();
+	
+	Livro livro = new Livro(title, author, releaseYear, price);
+	}
+}
+============================================= EXERCICIO3:
+---PROGRAMA 1: 
+package Aula;
+
+public class Pessoa {
+	private String name;
+	private int age;
+	private String sexuality;
+	public Pessoa (String name, int age, String sexuality){
+		this.name = name;
+		this.age = age;
+		this.sexuality = sexuality;
+		
+		System.out.println ("My name is: "+this.name);
+		System.out.println ("My age is: "+this.age);
+		System.out.println ("My sexuality is: "+this.sexuality);
+		
+	}
+}
+
+---PROGRAMA 2:
+package Aula;
+import java.util.Scanner;
+
+public class Main3 {
+	public static void main (String [] src) {
+		Scanner scanner = new Scanner (System.in);
+		String name, sexuality;
+		int age;
+		
+		System.out.println (" === Register ===");
+		System.out.println ("Enter your name: ");
+		name = scanner.nextLine();
+		System.out.println ("Enter your age: ");
+		age = scanner.nextInt();
+		scanner.nextLine();
+		System.out.println ("Enter your sexuality: ");
+		sexuality = scanner.nextLine();
+		Pessoa pessoa = new Pessoa (name, age, sexuality);
+	}
+}
 
