@@ -1,0 +1,108 @@
+=============================================EX1:
+package Lista;
+import java.util.Scanner;
+
+public class ex1 {
+	public static void main (String [] src) {
+		Scanner scanner = new Scanner (System.in);
+		int[] number = new int[10];
+		
+		for (int i = 0 ; i < 10 ; i++) {
+			System.out.println ("Enter number: ");
+			number[i] = scanner.nextInt();
+		}
+		for (int i = number.length -1 ; i >= 0 ; i--) {
+			System.out.println ("Result: "+number[i]);
+		}
+	}
+}
+=============================================EX2:
+package Lista;
+import java.util.Scanner;
+
+public class ex2 {
+	public static void main (String [] src) {
+		Scanner scanner = new Scanner (System.in);
+		int[] number = new int[10];
+		int cont = 0;
+		System.out.println ("===- CHECKING ODD AND EVEN NUMBERS -===");
+		for (int i = 0 ; i < 10 ; i++) {
+			cont++;
+			System.out.println ("Enter number "+cont+" :");
+			number[i] = scanner.nextInt();
+		}
+		for (int i = 0; i < 10 ; i++) {
+			if (number[i] % 2 == 0) {
+				System.out.println ("Numbers odd: "+number[i]);
+			}
+			else {
+				System.out.println ("Numbers even: "+number[i]);
+			}
+		}
+	}
+}
+=============================================EX3:
+package Lista;
+import java.util.Scanner;
+
+public class Ex3 {
+	public static void main (String [] src) {
+		Scanner scanner = new Scanner (System.in);
+		int[] number1 = new int[5];
+		int[] number2 = new int[5];
+		int[] result = new int [5];
+		int cont1 = 0, cont2 = 0;
+		
+			
+		for (int i = 0 ; i < 5 ; i++) {
+			cont1++;
+			System.out.println ("Enter number "+cont1+": ");
+			number1[i] = scanner.nextInt();
+			scanner.nextLine();
+		}
+		for (int i = 0 ; i < 5 ; i++) {
+			cont2++;
+			System.out.println ("Enter number "+cont2+": ");
+			number2[i] = scanner.nextInt();
+			scanner.nextLine();
+		}
+		for (int i = 0; i < 5; i++) {
+			result[i] += number1[i] + number2[i];
+		}
+		for (int i = 0 ; i < 5 ; i++) {
+			System.out.println ("Result: "+result[i]);
+		}
+	}
+}
+=============================================EX4:
+package Lista;
+import java.util.Scanner;
+
+public class Ex4 {
+	public static void main (String[] src) {
+		Scanner scanner = new Scanner (System.in);
+		int[] number1 = new int[5];
+		int[] result = new int[5];
+		int[] result2 = new int[5];
+		int cont = 0;
+		
+		for (int i = 0 ; i < 5 ; i++) {
+			cont++;
+			System.out.println ("Enter number "+cont+": ");
+			number1[i] = scanner.nextInt();
+			
+			if (number1[i] % 2 ==0) {
+				result[i] = number1[i];
+			}
+			else {
+				result2[i] = number1[i];
+			}
+		}
+		
+		for (int i = 0 ; i < 5 ; i++ ) {
+			System.out.println ("Number Par"+result[i]);		}
+		for (int i = 0 ; i < 5 ; i++ ) {
+			System.out.println ("Number Impar"+result2[i]);
+		}
+	}
+}
