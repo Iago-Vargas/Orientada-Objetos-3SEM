@@ -1,0 +1,163 @@
+============================================================================================== Ex1:
+package Lista;
+import java.util.Scanner;
+
+public class Ex1 {
+	public static void main (String [] src) {
+		Scanner scanner = new Scanner (System.in);
+		int cont = 0;
+		for (int i = 0 ; i < 10 ; i++) {
+			cont++;
+			
+			System.out.println (""+cont);
+		}
+	}
+}
+============================================================================================== Ex2:
+package Lista;
+import java.util.Scanner;
+
+public class Ex2 {
+	public static void main (String[] src) {
+		Scanner scanner = new Scanner (System.in);
+		int number = 0;
+		for (int i = 0 ; i < 20 ; i++) {
+			number++;
+			
+			if (number % 2 == 0) {
+				System.out.println (" "+number+" odd number");
+			}
+			else {
+			
+			}
+		}
+	}
+}
+
+============================================================================================== Ex3:
+package Lista;
+import java.util.Scanner;
+
+public class Ex3 {
+	public static void main (String [] src) {
+		Scanner scanner = new Scanner (System.in);
+		int seven = 0, cont = 0;
+		
+		for (int i = 0 ; i <= 10 ; i++) {
+			seven = i * 7;
+			System.out.println ("7 x "+cont+" = "+seven);
+			cont++;
+		}
+	}
+}
+============================================================================================== Ex4:
+package Lista;
+import java.util.Scanner;
+
+public class Ex4 {
+	public static void main (String [] src) {
+		Scanner scanner = new Scanner (System.in);
+		int sum = 0, cont = 0;
+		for (int i = 0 ; i <= 100 ; i++) {
+			sum += i;
+			System.out.println ("Result sum: "+sum);
+		}
+	}
+}
+
+============================================================================================== Ex5:
+package Lista;
+import java.util.Scanner;
+
+public class Ex5 {
+	public static void main (String [] src) {
+		Scanner scanner = new Scanner (System.in);
+		int factorial = 1;
+		
+		System.out.println ("Enter the factorial number: ");
+		factorial = scanner.nextInt();
+		
+		for (int i = 1 ; i <= 5 ; i++) {
+			factorial *= i;
+		}
+		System.out.println ("Result: "+factorial);
+	}
+}
+
+============================================================================================== Ex6:
+package Lista;
+import java.util.Scanner;
+
+public class Ex6 {
+	public static void main (String [] src) {
+		Scanner scanner = new Scanner (System.in);
+		int number = 1;
+		
+		while (number != 0) {
+			System.out.println ("Enter number: ('0' Exit)");
+			number = scanner.nextInt();
+		}
+		System.out.println ("Exit");
+	}
+}
+
+============================================================================================== Ex7:
+package Lista;
+import java.util.Scanner;
+
+public class Ex6 {
+	public static void main (String [] src) {
+		Scanner scanner = new Scanner (System.in);
+		int number = 1;
+		
+		while (number != 0) {
+			System.out.println ("Enter number: ('0' Exit)");
+			number = scanner.nextInt();
+		}
+		System.out.println ("Exit");
+	}
+}
+
+============================================================================================== Ex8:
+package Lista;
+import java.util.Scanner;
+
+public class Ex8 {
+	public static void main (String [] src) {
+		Scanner scanner = new Scanner (System.in);
+		String city;
+		
+		while (true) {
+			System.out.println ("Enter the name of the city: ");
+			city = scanner.nextLine();
+			System.out.println (""+city);
+			if (city.equalsIgnoreCase("São Paulo")) {
+				System.out.println (" You Win! "); 
+				break;
+			}
+		}
+	}
+}
+
+============================================================================================== Ex9:
+package Lista;
+import java.util.Scanner;
+public class Ex9 {
+	public static void main (String [] src) {
+		Scanner scanner = new Scanner (System.in);
+		int number = 0, cont = 0, total = 0, average = 0;
+		
+			System.out.println ("Enter number: ('0' Exit)");
+			number = scanner.nextInt();
+			total += number;
+		while (number != 0 ) {
+			cont++;
+			System.out.println ("Enter number: ('0' Exit)");
+			number = scanner.nextInt();
+			total += number;
+		}
+			average = total / cont;
+			System.out.println ("Average of values: "+average);
+	}
+}
+
